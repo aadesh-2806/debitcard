@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins' , sans-serif;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1c1c25;
+}
+section::before{
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: 40%;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: linear-gradient(#f00 , #f0f);
+}
+.card{
+    position: relative;
+    width: 500px;
+    height: 314px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.face{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    transform-style: preserve-3d ;
+    transition: 1s;
+    backface-visibility: hidden;
+}
+
+.back{
+    transform: rotateY(180deg);
+}
+
+.card:hover .front{
+    transform: rotateY(180deg);
+}
+
+.card:hover .back{
+    transform: rotateY(360deg);
+}
+
+.front::before , .front::after{
+    content: '';
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.front::after{
+    right: 80px;
+    opacity: 0.7;
+}
+
+.front h3 , .front h5{
+    color: #fff;
+    position: absolute;
+}
+
+.debit , .bank{
+    left: 40px;
+    top: 30px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.bank{
+    left: unset;
+    right: 40px;
+    top: 25px;
+    font-size: 24px;
+}
+
+.chip{
+    position: absolute;
+    left: 50px;
+    top: 80px;
+    max-width: 64px;
+}
+
+.number{
+    bottom: 130px;
+    left: 40px;
+    font-weight: 500;
+    letter-spacing: 6px;
+    font-size: 20px;
+    text-shadow: 0px 2px 1px #0005;
+    font-family: 'Orbitron' , sans-serif;
+}
+.valid{
+    bottom: 90px;
+    left: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+    line-height: 1em;
+    text-align: right;
+}
+.valid span:last-child{
+    margin-left: 20px;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+.cardholder{
+    bottom: 40px;
+    left: 40px;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+.blackbar{
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    height: 60px;
+    background: #000;
+}
+.context{
+    color: #fff;
+    position: absolute;
+    top: 120px;
+    left: 30px;
+}
+.context h5{
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.whitebar{
+    position: relative;
+    width: 400px;
+    height: 40px;
+    background: #fff;
+    margin-top: 5px;
+}
+.cvv{
+    position: relative;
+    background: #ccc;
+    width: 50px;
+    height: 30px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -35px;
+    left: 395px;
+}
+.text{
+    color: #fff;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    font-size: 10px;
+    line-height: 1.4em;
+    font-weight: 300;
+}
